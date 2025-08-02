@@ -64,20 +64,20 @@ function TicTacToe() {
     }
     
     if (winningLine.includes(index)) {
-      baseClass += " bg-gradient-to-br from-green-600 to-emerald-600 border-green-400 animate-pulse"
+      baseClass += " bg-gradient-to-br from-orange-600 to-red-600 border-orange-400 animate-pulse"
     }
     
     if (board[index] === 'X') {
-      baseClass += " text-blue-400"
+      baseClass += " text-orange-400"
     } else if (board[index] === 'O') {
-      baseClass += " text-pink-400"
+      baseClass += " text-red-400"
     }
     
     return baseClass
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-black flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-red-900 to-orange-900 flex items-center justify-center p-4">
       <div className="text-center animate-fade-in">
         {/* Header */}
         <div className="mb-8">
@@ -89,7 +89,7 @@ function TicTacToe() {
             Zpět na hlavní stránku
           </button>
           
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 bg-clip-text text-transparent mb-4">
             Tic Tac Toe
           </h1>
         </div>
@@ -97,7 +97,7 @@ function TicTacToe() {
         {/* Game Status */}
         <div className="mb-8">
           {winner ? (
-            <div className="flex items-center justify-center gap-3 text-2xl font-bold text-green-400">
+            <div className="flex items-center justify-center gap-3 text-2xl font-bold text-orange-400">
               <Trophy className="w-8 h-8" />
               Vítěz: Hráč {winner}
             </div>
@@ -109,7 +109,7 @@ function TicTacToe() {
             <div className="flex items-center justify-center gap-3 text-xl font-semibold text-slate-300">
               <Users className="w-6 h-6" />
               Na tahu: Hráč {currentPlayer}
-              <span className={`text-2xl ${currentPlayer === 'X' ? 'text-blue-400' : 'text-pink-400'}`}>
+              <span className={`text-2xl ${currentPlayer === 'X' ? 'text-orange-400' : 'text-red-400'}`}>
                 {currentPlayer}
               </span>
             </div>
@@ -134,7 +134,7 @@ function TicTacToe() {
         <div className="flex gap-4 justify-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
           <button
             onClick={resetGame}
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg shadow-purple-500/25 hover:shadow-xl hover:shadow-purple-500/40 transform hover:scale-105 transition-all duration-200"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/40 transform hover:scale-105 transition-all duration-200"
           >
             <RotateCcw className="w-5 h-5" />
             Nová hra
