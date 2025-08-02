@@ -163,16 +163,6 @@ function Tetris() {
     return { newBoard, linesCleared }
   }
 
-  const spawnNewPiece = useCallback(() => {
-    const newType = nextPiece || getRandomTetromino()
-    const newPiece = createTetromino(newType)
-    
-    setCurrentPiece(newPiece)
-    setNextPiece(getRandomTetromino())
-    
-    return newPiece
-  }, [nextPiece])
-
   const movePiece = useCallback((direction: 'left' | 'right' | 'down') => {
     if (!currentPiece || gameOver || !gameStarted || isPaused) return
     
